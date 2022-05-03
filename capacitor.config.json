@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "uber-eats",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
