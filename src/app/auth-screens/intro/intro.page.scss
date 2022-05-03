@@ -1,0 +1,10 @@
+ion-slides {
+  height: 100%;
+  --bullet-background: var(--ion-color-dark);
+
+  ion-slide {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
