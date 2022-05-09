@@ -1,4 +1,9 @@
+import { StorageService } from './../../services/storage.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Storage } from '@capacitor/storage';
+
+export const INTRO_KEY = 'intro-slides';
 
 @Component({
   selector: 'app-intro',
@@ -8,10 +13,15 @@ import { Component, OnInit } from '@angular/core';
 export class IntroPage implements OnInit {
   slideOpts: any;
 
-  constructor() {}
+  constructor(private router: Router, private storage: StorageService) {}
 
   ngOnInit() {
     this.animation();
+  }
+
+  async goToLogin() {
+    await this.storage.setStorage(INTRO_KEY, 'true');
+    this.router.navigateByUrl('/auth-screens', { replaceUrl: true });
   }
 
   animation() {
